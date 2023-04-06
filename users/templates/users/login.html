@@ -7,7 +7,7 @@
                 <div class="col-lg-5">
                     {% if messages or form.non_field_errors %}
                         <div class="alert
-                        {% if messages %} alert-success{% else %} alert-danger{% endif %}
+                        {% if messages %} alert-success {% else %} alert-danger {% endif %}
                          alert-dismissible fade show" role="alert"
                              style="margin-top: 50px;">
                             {% if messages %}
@@ -63,7 +63,7 @@
                         <div class="card-footer text-center">
                             <div class="small">
                                 <a href="{% url 'users:registration' %}">
-                                    Нужен аккаунт? Зарегистрируйся!
+                                    Не зарегистрированы? Присоединяйтесь!
                                 </a>
                             </div>
                         </div>
