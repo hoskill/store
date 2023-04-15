@@ -22,6 +22,10 @@ class EmailVerification(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     expiration = models.DateTimeField()
 
+    class Meta:
+        verbose_name = 'Email верификация'
+        verbose_name_plural = 'Email верификации'
+
     def __str__(self):
         return f'EmailVerification object for {self.user.email}'
 
