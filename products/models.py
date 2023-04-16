@@ -15,6 +15,9 @@ class ProductCategory(models.Model):
         return self.name
 
 
+# python -Xutf8 manage.py dumpdata products.ProductCategory -o categories.json
+# python manage.py loaddata products/fixtures/categories.json
+
 class Product(models.Model):
     name = models.CharField(max_length=256)
     description = models.TextField()

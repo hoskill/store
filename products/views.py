@@ -7,6 +7,7 @@ from django.views.generic.list import ListView
 from common.views import TitleMixin
 from products.models import Basket, Product, ProductCategory
 
+
 # Create your views here.
 
 class IndexView(TitleMixin, TemplateView):
@@ -33,7 +34,6 @@ class ProductsListView(TitleMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
         context['categories'] = ProductCategory.objects.all()
-        # context['category_id'] = self.kwargs.get('category_id') Что-то проверял. Вроде не нужно
         return context
 
 
