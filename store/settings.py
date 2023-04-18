@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
 
+    "debug_toolbar",
+
     'products',
     'users',
-
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'store.urls'
@@ -81,6 +85,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'store.wsgi.application'
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+    'localhost'
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -157,12 +166,12 @@ LOGOUT_REDIRECT_URL = '/'
 
 # Sending emails
 
-# EMAIL_HOST = 'smtp.yandex.com'
-# EMAIL_PORT = '465'
-# EMAIL_HOST_USER = 'stor3server@yandex.ru'
-# EMAIL_HOST_PASSWORD = 'Store-server'
-# EMAIL_USE_SSL = True
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'stor3server@yandex.ru'
+EMAIL_HOST_PASSWORD = 'Store-server'
+EMAIL_USE_SSL = True
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # OAuth
 AUTHENTICATION_BACKENDS = [
